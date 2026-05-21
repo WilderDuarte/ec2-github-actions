@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: EC2 creada desde GitHub Actions
+
+Resources:
+
+  MyEC2:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0ed094fb1304fd857
+      InstanceType: t3.micro
+
+      Tags:
+        - Key: Name
+          Value: EC2-GitHubActions
+
+Outputs:
+
+  InstanceId:
+    Value: !Ref MyEC2
